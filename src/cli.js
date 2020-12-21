@@ -64,9 +64,9 @@ function patchIndexHtml(html) {
   let $ = cheerio.load(html);
 
   if ($("script#react-dotenv").length) {
-    $("script#react-dotenv").attr("src", `${homepage}/env.js`);
+    $("script#react-dotenv").attr("src", `${path.join(homepage, "env.js")}`);
   } else {
-    $("head").append(`\t<script id="react-dotenv" src="${homepage}/env.js"></script>\n\t`);
+    $("head").append(`\t<script id="react-dotenv" src="${path.join(homepage, "env.js")}"></script>\n\t`);
   }
 
   return prettier.format($.html(), { parser: "html" });
