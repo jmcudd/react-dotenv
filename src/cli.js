@@ -24,7 +24,7 @@ const whitelist = get(appPackage, "react-dotenv.whitelist", []);
  * Check for custom homepage (basepath)
  * More Info: https://create-react-app.dev/docs/deployment/#building-for-relative-paths
  */
-const homepage = get(appPackage, "homepage", ".");
+const homepage = get(appPackage, "homepage", "");
 
 /**
  * Remove all environment variables
