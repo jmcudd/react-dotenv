@@ -62,6 +62,7 @@ fs.access(buildIndexHtmlPath, fs.constants.W_OK, (err) => {
 
 function patchIndexHtml(html) {
   let $ = cheerio.load(html);
+  console.log("path!", path.join(homepage, "env.js"));
 
   if ($("script#react-dotenv").length) {
     $("script#react-dotenv").attr("src", `${path.join(homepage, "env.js")}`);
